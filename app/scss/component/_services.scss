@@ -1,0 +1,96 @@
+.services {
+  @include r(576) {
+    padding-bottom: 34px;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+
+    @include r(992) {
+      display: block;
+    }
+
+    @include r(576) {
+      text-align: left;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-top: 90px;
+    width: 330px;
+
+    @include r(1200) {
+      width: 280px;
+    }
+
+    @include r(992) {
+      width: 100%;
+      padding-top: 65px;
+      margin-bottom: 35px;
+    }
+
+    @include r(576) {
+      padding-top: 50px;
+      margin-bottom: 30px;
+    }
+
+    &::before {
+      @include pseudo;
+      width: 60px;
+      height: 60px;
+      top: 0;
+      left: 0;
+
+      @include r(992) {
+        width: 50px;
+        height: 50px;
+      }
+
+      @include r(576) {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    &:first-child {
+      &::before {
+        @include sprite(code-icon);
+      }
+    }
+
+    &:nth-child(2) {
+      &::before {
+        @include sprite(dev-icon);
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+
+      &::before {
+        @include sprite(chat-icon);
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 25px;
+
+    @include r(992) {
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    @include r(576) {
+      font-size: 20px;
+    }
+  }
+
+  &__text {
+    line-height: 1.6;
+  }
+}

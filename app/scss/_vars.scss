@@ -1,0 +1,47 @@
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin sprite($src) {
+  background: url('../images/sprite.svg#'+$src) no-repeat center/cover;
+}
+
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+@mixin r($width) {
+  @media (max-width: #{$width}px) {
+    @content;
+  }
+}
+
+$main: #333333;
+$white: #ffffff;
+$bg: #F6F6F8;
+$fullbar: #DBDBED;
+$btn: #2352DE;
+$black: #000000;
+$placeholder: #9C9CAB;
+$footer: #343740;
+$menu-mobile: #7792E0;
+
+// %checkbox-hidden{
+//   width: 1px;
+//   height: 1px;
+//   overflow: hidden;
+//   clip: rect(0 0 0 0);
+//   position: absolute;
+// }
+
+// @function max($numbers...) {
+//   @return m#{a}x(#{$numbers});
+// }
+
+// @function min($numbers...) {
+//   @return m#{i}n(#{$numbers});
+// }
